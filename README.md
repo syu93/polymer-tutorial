@@ -6,7 +6,7 @@
 * [Get started with polymer](#get-started-with-polymer)
 * [Table of contents](#table-of-contents)
 * [What is Polymer](#what-is-polymer)
-    * [Web components](#web-components-?)
+    * [Web components](#web-components)
     * [Polyfill](#polyfill)
     * [Shadow DOM](#shadow-dom)
 * [How to install Polymer](#how-to-install-polymer)
@@ -39,7 +39,7 @@ Polymer is built on top of the `web components` standards and it helps you build
 
 **Note:** Not all browsers support these standards yet, so the web components `polyfill` fills the gaps, implementing the APIs in JavaScript.
 
-## Polyfill ! Poly... what ?!
+## Polyfill
 A **polyfill**, or **polyfiller**, is a piece of code (or plugin) that provides the technology that you, the developer, expect the browser to provide natively. Flattening the API landscape if you will.
 
 **webcomponents.js** is a set of *polyfills* built on top of the Web Components specifications. It makes it possible for developers to use these standards today across all modern browsers.
