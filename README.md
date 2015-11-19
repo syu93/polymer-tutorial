@@ -17,11 +17,11 @@ The Polymer __*library*__ *(because it's a library **not a framework**)* is desi
 
 __*Is it much clear now ...? Certainly not. Let's explain this in further details.*__
 
-HTML provides a set of __built-in__ elements like <button> , <form> and <table> . Each element has its own API of attributes, properties, methods, and events. Each element has built-in styling, as well as style properties you can override using CSS.
+HTML provides a set of __built-in__ elements like `<button>`, `<form>` and `<table>` . Each element has its own API of attributes, properties, methods, and events. Each element has built-in styling, as well as style properties you can override using CSS.
 
 Anyone can use these elements to build a simple web page. But they’re limited. To build something as simple as a set of tabs, you need HTML plus CSS and usually a script, too.
 
-With __custom elements__, you can extend the vocabulary of HTML with your own elements. Elements that provide sophisticated UI. Elements that are as easy to use as **<select>** :
+With __custom elements__, you can extend the vocabulary of HTML with your own elements. Elements that provide sophisticated UI. Elements that are as easy to use as `<select>` :
 
 ```html
 <my-tabstrip>
