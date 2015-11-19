@@ -1,4 +1,4 @@
- # Get started with polymer
+# Get started with polymer
  
 *This document aim to bring a small comprehension to the Polymer library and all the elements which goes with.*
 
@@ -6,13 +6,13 @@
 * [Get started with polymer](#get-started-with-polymer)
 * [Table of contents](#table-of-contents)
 * [What is Polymer](#what-is-polymer)
-    * [Web components ?](#web-components-?)
-    * [Polyfill ! Poly... what ?!](#polyfill-!-poly...-what-?!)
-    * [Shadow DOM ?](#shadow-dom-?)
+    * [Web components](#web-components-?)
+    * [Polyfill](#polyfill)
+    * [Shadow DOM](#shadow-dom)
 * [How to install Polymer](#how-to-install-polymer)
 * [How to use Polymer (good way and learning way)](#how-to-use-polymer)
 
-## What is Polymer ?
+## What is Polymer
 The Polymer __*library*__ *(because it's a library **not a framework**)* is designed to make it easier and faster for developers to create great, reusable components for the modern web....
 
 __*Is it much clear now ...? Certainly not. Let's explain this in further details.*__
@@ -32,7 +32,7 @@ With __custom elements__, you can extend the vocabulary of HTML with your own el
 ```
 Polymer is built on top of the `web components` standards and it helps you build your own custom elements:
 
-## Web components ?!
+## Web components
 
 **Web components**. These standards provide the primitives you 
     need to build new components such as `import html` or `custom tags`. You can build your own custom elements using these primitives, but it can be a lot of work.
@@ -46,7 +46,7 @@ A **polyfill**, or **polyfiller**, is a piece of code (or plugin) that provides 
 
 As these technologies are implemented in browsers, the polyfills will shrink and you'll gain the benefits of native implementations. webcomponents.js automatically detects native support and switches to the fast path when available. Your elements seamlessly start relying on the native stuff--and get faster in the process.
 
-## Shadow DOM ?
+## Shadow DOM
 **`Shadow DOM`** provides encapsulation for the JavaScript, CSS, and templating in a *Web Component*. Shadow DOM makes it so these things remain separate from the DOM of the main document. You can also use Shadow DOM by itself, outside of a web component.
 
 Why would you want to keep some code separate from the rest of the page? One reason is that on a large site, for example, if the CSS is not carefully organized, the styling for the navigation can "leak" into the main content area where it was not intended to go, or vice-versa. As a site or an app scales, this kind of thing becomes difficult to avoid
