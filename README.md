@@ -125,7 +125,7 @@ It will provide you a complete application that you just have to hack and modify
 
 Get your hands dirty and build your own application from the ground. It's really useful if you want to exactly understand what going on under the hood.
 
-**Note:** I want to be very clear, I do not recommend to build your application from scratch because there is a great starter kit made by the Polymer developer theme-self.
+**Note:** I want to be very clear, I do not recommend to build your application from scratch because there is a great starter kit made by the Polymer developer themselves.
         
         !!! Using the PSK will be more efficient if you're targeting the production ready application !!!
         
@@ -213,7 +213,7 @@ Seriours stuff start here.
 
 As I said before, to ensure that your application will be available on all modern browsers but also that the APIs will work the same way across browsers, you need to use the Polyfills *`webcomponents-lite.js`* that comes with Polymer.
 
-__*And now you probably ask your-self : Ok cool but, Where is the polymer library ?*__
+__*And now you probably ask yourself : Ok cool but, Where is the polymer library ?*__
 
 Here I come, you've noticed the `element.html` file. It's a part of the Polymer best practices. Instead of just throwing all the elements you need to import in your application in the index.html, use the **elements.html** as a "dependency container" that will import all the elements you need. It's more readable and this way you can manage easily all the elements you depend on.
 
@@ -231,7 +231,7 @@ For our simple application here it is :
 
 __*Well, I still not see the import of the polymer library, do we even need to include the library at all ?*__
 
-In fact, you don't need to import your-self the polymer.html as the polymer library uses the native web compoent API *(with help of the Polyfill)*. The libray simply provide a set of tools that let you use this API to create your custom elements.
+In fact, you don't need to import yourself the polymer.html as the polymer library uses the native web compoent API *(with help of the Polyfill)*. The libray simply provide a set of tools that let you use this API to create your custom elements.
 
 **Note:** As a matter of fact, the Polymer `custom elements` are including the Polymer library to use its API
 
