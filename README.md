@@ -69,7 +69,7 @@ command from the root of your project:
 
     $ bower init
     
-**Tip:** Use the `--allow-route` option if your are connected or execute command as __*root*__. The command will not work otherwise.
+**Tip:** Use the `--allow-root` option if your are connected or execute command as __*root*__. The command will not work otherwise.
 
 This generates a basic `bower.json` file. Some of the questions, like
 "What kind of modules do you expose," can be ignored by pressing Enter.
