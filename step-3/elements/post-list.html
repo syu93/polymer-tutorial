@@ -1,0 +1,42 @@
+﻿<link rel="import" href="../../vendor/polymer/polymer.html">
+<!-- <link rel="import" href="../../post-service/post-service.html"> -->
+
+<link rel="import" href="post-card.html">
+
+<dom-module id="post-list">
+  <template>
+    <style>
+      :host {
+        display: block;
+        width: 100%;
+      }
+      post-card {
+        margin-bottom: 30px;
+      }
+    </style>
+
+      <!-- <post-service id="service" posts="{{posts}}"></post-service> -->
+
+      <template repeat="{{post in posts}}">
+        <post-card favorite="true">
+          <img src="../../images/avatar-01.svg" width="70" height="70">
+          <h2>Syu</h2>
+          <p>Loving this Polymer thing.</p>
+        </post-card>
+      </template>
+  </template>
+
+  <script>
+    Polymer({
+      is: "post-list",
+      properties: {
+        posts:  {
+          type: Object,
+          value: function (argument) {
+            return [{"plop":"plop"}];
+          }
+        }
+      },
+    });
+  </script>
+</dom-module>
