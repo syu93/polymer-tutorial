@@ -1,0 +1,72 @@
+﻿<link rel="import" href="../../vendor/polymer/polymer.html">
+
+<link rel="import" href="../../vendor/iron-flex-layout/classes/iron-flex-layout.html">
+<link rel="import" href="../../vendor/iron-icons/iron-icons.html">
+
+<link rel="import" href="../../vendor/paper-card/paper-card.html">
+<link rel="import" href="../../vendor/paper-icon-button/paper-icon-button.html">
+
+
+<dom-module id="post-card">
+  <template>
+    <!-- scoped CSS for this element -->
+    <style>
+    paper-card {
+      padding: 20px;
+      width: 100%;
+      font-size: 1.2rem;
+      font-weight: 300;
+    }
+
+    paper-icon-button {
+      color: grey;
+      position: absolute;
+      top: 3px;
+      right: 3px;
+      fill: #636363;
+    }
+
+    :host[favorite="true"] paper-icon-button {
+      color: red;
+    }
+
+    .card-header {
+      @apply(--layout-horizontal);
+      margin-bottom: 10px;
+    }
+    
+    :host ::content h2 {
+      margin: 0;
+      font-size: 1.8em;
+      font-weight: 300;
+    }
+
+    :host ::content img {
+      width: 70px;
+      border-radius: 50%;
+      margin: 10px;
+    }
+    </style>
+    <paper-card>
+      <paper-icon-button toggles icon="favorite" on-click="changeState"></paper-icon-button>
+      <div class="horizontal layout center">
+        <!-- any children are rendered here -->
+        <content select="img"></content>
+        <content select="h2"></content>
+      </div>
+      <content></content>
+    </paper-card>
+  </template>
+
+  <script>
+    Polymer({
+      is: "post-card",
+      properties: {
+        active: {
+          type: Boolean,
+          value: true
+        },
+      },
+    });
+  </script>
+</dom-module>
