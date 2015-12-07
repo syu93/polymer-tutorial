@@ -1,0 +1,34 @@
+<style is="custom-style">
+    .link {
+      @apply(--layout-horizontal);
+      @apply(--layout-center-center);
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    .flex {
+      @apply(--layout-flex);
+    }
+
+    .self-end {
+      @apply(--layout-self-end);
+    }
+
+    #tabs {
+        width: 100%;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    @media (min-width: 481px) {
+        #tabs {
+            width: 300px;
+        }
+    }
+
+    paper-toolbar {
+        --paper-toolbar-background: #03a9f4;
+    }
+</style>

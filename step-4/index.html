@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Polymer tutorial app - Step-1</title>
+
+    <script src="../vendor/webcomponentsjs/webcomponents-lite.js"></script>
+    <link rel="import" href="elements/elements.html">
+
+    <style>
+        html,body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: #E5E5E5;
+            font-family: 'RobotoDraft', sans-serif;
+        }
+
+        .container {
+            width: 80%;
+            margin: 50px auto;
+        }
+
+        @media (min-width: 481px) {
+            .container {
+                width: 400px;
+            }
+        }
+    </style>
+</head>
+
+<body unresolved class="fullbleed vertical layout">
+    <paper-header-panel class="flex">
+        <template is="dom-bind">
+            <paper-toolbar>
+                <paper-tabs id="tabs" selected="{{selected}}" class="bottom self-end">
+                    <paper-tab link><a href="#all" class="link">ALL</a></paper-tab>
+                    <paper-tab link><a href="#favorites" class="link">FAVORITES</a></paper-tab>
+                </paper-tabs>
+            </paper-toolbar>
+            <iron-pages selected="{{selected}}">
+              <div class="container">
+                <post-list></post-list>
+              </div>
+              <div>FAVORITES</div>
+            </iron-pages>
+        </template>
+    </paper-header-panel>
+    <script>
+    (function (window, document) {
+      window.addEventListener('WebComponentsReady', function(e) {
+          var tabs = document.querySelector('paper-tabs');
+              tabs.selected = 0;
+      });
+    })(window, document);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+﻿<link rel="import" href="../../vendor/polymer/polymer.html">
+<!-- <link rel="import" href="../../post-service/post-service.html"> -->
+
+<link rel="import" href="post-card.html">
+
+<dom-module id="post-list">
+  <template>
+    <style>
+      :host {
+        display: block;
+        width: 100%;
+      }
+    </style>
+
+      <post-service id="service" posts="{{posts}}"></post-service>
+
+      <template is="dom-repeat" items="{{posts}}" as="post">
+        <post-card favorite="{{post.favorite}}" hidden="{{!hide}}" on-favorite-tap="handleFavorite">
+          <img src="../images/{{post.avatar}}.svg" width="70" height="70">
+          <h2>{{post.name}}</h2>
+          <p>{{post.message}}</p>
+        </post-card>
+      </template>
+  </template>
+
+  <script>
+    Polymer({
+      is: "post-list",
+      ready: function() {
+        this.posts = [
+          { 
+            avatar: "avatar-01",
+            name: "Alex",
+            favorite: "",
+            message: "I love sandwich.",
+          },
+          { 
+            avatar: "avatar-16",
+            name: "Patak",
+            favorite: "true",
+            message: "I love pizza",
+          },
+          { 
+            avatar: "avatar-05",
+            name: "Titou",
+            favorite: "",
+            message: "Toast are greate.",
+          },
+          { 
+            avatar: "avatar-04",
+            name: "Syu",
+            favorite: "",
+            message: "Burgers are the best",
+          }
+        ];
+      },
+      handleFavorite: function() {
+        console.log('variable');
+      },
+    });
+  </script>
+</dom-module>
