@@ -11,6 +11,9 @@
   <template>
     <!-- scoped CSS for this element -->
     <style>
+    :host paper-card {
+      margin-bottom: 30px;
+    }
     paper-card {
       padding: 20px;
       width: 100%;
@@ -62,10 +65,17 @@
     Polymer({
       is: "post-card",
       properties: {
-        active: {
+        favorite: {
           type: Boolean,
-          value: true
+          reflectToAttribute: true,
         },
+      },
+      changeState: function() {
+        console.info('favorite post-card clicked');
+        this.favorite = !this.favorite;
+        if(this.favorite) {
+          this.setAttribute('favorite', this.favorite);
+        }
       },
     });
   </script>

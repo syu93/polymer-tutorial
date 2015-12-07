@@ -10,18 +10,15 @@
         display: block;
         width: 100%;
       }
-      post-card {
-        margin-bottom: 30px;
-      }
     </style>
 
       <!-- <post-service id="service" posts="{{posts}}"></post-service> -->
 
-      <template repeat="{{post in posts}}">
-        <post-card favorite="true">
-          <img src="../../images/avatar-01.svg" width="70" height="70">
-          <h2>Syu</h2>
-          <p>Loving this Polymer thing.</p>
+      <template is="dom-repeat" items="{{posts}}" as="post">
+        <post-card favorite="{{post.favorite}}">
+          <img src="../images/{{post.avatar}}.svg" width="70" height="70">
+          <h2>{{post.name}}</h2>
+          <p>{{post.message}}</p>
         </post-card>
       </template>
   </template>
@@ -29,13 +26,33 @@
   <script>
     Polymer({
       is: "post-list",
-      properties: {
-        posts:  {
-          type: Object,
-          value: function (argument) {
-            return [{"plop":"plop"}];
-          }
-        }
+      ready: function() {
+        this.posts = [
+            { 
+              avatar: "avatar-01",
+              name: "Alex",
+              favorite: "",
+              message: "I love sandwich.",
+            },
+            { 
+              avatar: "avatar-16",
+              name: "Patak",
+              favorite: "true",
+              message: "I love pizza",
+            },
+            { 
+              avatar: "avatar-05",
+              name: "Titou",
+              favorite: "",
+              message: "Toast are greate.",
+            },
+            { 
+              avatar: "avatar-04",
+              name: "Syu",
+              favorite: "",
+              message: "Burgers are the best",
+            }
+        ];
       },
     });
   </script>
