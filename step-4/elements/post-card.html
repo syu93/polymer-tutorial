@@ -70,12 +70,12 @@
           reflectToAttribute: true,
         },
       },
-      changeState: function() {
-        console.info('favorite post-card clicked');
+      changeState: function(e, detail) {
+        // console.info('favorite post-card clicked');
         this.favorite = !this.favorite;
         if(this.favorite) {
           this.setAttribute('favorite', this.favorite);
-          this.fire("favorite-tap");
+          this.fire("favorite-tap", {element: this});
         }
       },
     });

@@ -12,10 +12,10 @@
       }
     </style>
 
-      <post-service id="service" posts="{{posts}}"></post-service>
+      <!-- <post-service id="service" posts="{{posts}}"></post-service> -->
 
       <template is="dom-repeat" items="{{posts}}" as="post">
-        <post-card favorite="{{post.favorite}}" hidden="{{!hide}}" on-favorite-tap="handleFavorite">
+        <post-card favorite="{{post.favorite}}" on-favorite-tap="handleFavorite" hidden$="{{show}}">
           <img src="../images/{{post.avatar}}.svg" width="70" height="70">
           <h2>{{post.name}}</h2>
           <p>{{post.message}}</p>
@@ -29,24 +29,28 @@
       ready: function() {
         this.posts = [
           { 
+            uid: "001",
             avatar: "avatar-01",
             name: "Alex",
             favorite: "",
             message: "I love sandwich.",
           },
           { 
+            uid: "002",
             avatar: "avatar-16",
             name: "Patak",
             favorite: "true",
             message: "I love pizza",
           },
           { 
+            uid: "003",
             avatar: "avatar-05",
             name: "Titou",
             favorite: "",
             message: "Toast are greate.",
           },
           { 
+            uid: "004",
             avatar: "avatar-04",
             name: "Syu",
             favorite: "",
@@ -54,8 +58,16 @@
           }
         ];
       },
-      handleFavorite: function() {
-        console.log('variable');
+      properties: {
+        show: {
+          type: Boolean,
+          value: false,
+          reflect: true,
+          notify: true,
+        }
+      },
+      handleFavorite: function(e) {
+
       },
     });
   </script>

@@ -41,11 +41,13 @@
                     <paper-tab link><a href="#favorites" class="link">FAVORITES</a></paper-tab>
                 </paper-tabs>
             </paper-toolbar>
-            <iron-pages selected="{{selected}}">
+            <iron-pages selected>
               <div class="container">
                 <post-list></post-list>
               </div>
-              <div>FAVORITES</div>
+<!--               <div class="container">
+                <post-list show="favorites"></post-list>
+              </div> -->
             </iron-pages>
         </template>
     </paper-header-panel>
@@ -54,6 +56,36 @@
       window.addEventListener('WebComponentsReady', function(e) {
           var tabs = document.querySelector('paper-tabs');
               tabs.selected = 0;
+          
+          var page = document.querySelector('iron-pages');
+          
+          var postList = document.querySelector('post-list');
+
+          postList.addEventListener('show-changed', handleShow);
+
+          tabs.addEventListener('click', function(e) {
+            if (this.selected == 1) {
+              page.selected = 0;
+              postList.show = true;
+            } else {
+              postList.show = false;
+            }
+            console.info('show property changed : ', postList.show);
+          });
+
+          function handleShow (e) {
+            var postCards = document.querySelectorAll('post-card');
+            for (var i = 0; i < postCards.length; i++) {
+              console.log(i + ' : ' + postCards[i].favorite);
+              if (e.detail.value == false) { // show all
+                postCards[i].removeAttribute('hidden');
+              } else { // show favotie
+                if (String(postCards[i].favorite) == 'true') {
+                  postCards[i].removeAttribute('hidden');
+                }
+              }
+            }
+          }
       });
     })(window, document);
     </script>
