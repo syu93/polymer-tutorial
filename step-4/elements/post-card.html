@@ -73,9 +73,9 @@
       changeState: function(e, detail) {
         // console.info('favorite post-card clicked');
         this.favorite = !this.favorite;
+        this.fire("favorite-tap", {element: this});
         if(this.favorite) {
           this.setAttribute('favorite', this.favorite);
-          this.fire("favorite-tap", {element: this});
         }
       },
     });

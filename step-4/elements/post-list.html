@@ -67,7 +67,9 @@
         }
       },
       handleFavorite: function(e) {
-
+        if (this.show) {
+          e.detail.element.setAttribute('hidden', false);
+        }
       },
     });
   </script>
